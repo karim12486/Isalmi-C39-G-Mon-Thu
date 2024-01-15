@@ -1,6 +1,7 @@
 package com.route.islami_c39_g_mon_wed.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +30,7 @@ class ProfileFragment : Fragment() {
         createSettingsList()
         adapter = SettingsAdapter(settingsList)
         recyclerView.adapter = adapter
+        Log.e("Profile Tag", "onViewCreated: Finished Profile Screen ")
     }
 
     fun createSettingsList() {
