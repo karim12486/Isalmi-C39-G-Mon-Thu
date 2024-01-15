@@ -44,12 +44,17 @@ class MainActivity : AppCompatActivity() {
     //          1- UnVersioned Files States ->  initial Commit
     //          2- Ignored Files States
     //          3- Tracked (Versioned) Files States
+    // Local Repository
+    // Github - Gitlab - BitBuckets
+
 
     // View Binding
     fun pushFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment)
             .commit()
         Log.e("TAG", "pushFragment: ")
+        Log.e("TAG2", "pushFragment:2 ")
+        // Pull Request
 
     }
 }
