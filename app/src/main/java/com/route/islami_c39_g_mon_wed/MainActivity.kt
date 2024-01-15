@@ -2,6 +2,7 @@ package com.route.islami_c39_g_mon_wed
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.route.islami_c39_g_mon_wed.fragments.HomeFragment
@@ -48,5 +49,7 @@ class MainActivity : AppCompatActivity() {
     fun pushFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment)
             .commit()
+        Log.e("TAG", "pushFragment: ")
+
     }
 }
