@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="home_black_color">#000000</color>
     <color name="profile_white_color">#FFFFFF</color>
+    <color name="gold">#FFB7935F</color>
+    <color name="goldVariant">#FF847052</color>
 </resources>
