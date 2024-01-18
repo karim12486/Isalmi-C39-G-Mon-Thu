@@ -8,22 +8,23 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.route.islami_c39_g_mon_wed.R
+import com.route.islami_c39_g_mon_wed.databinding.FragmentHomeBinding
 
 // 1- inherit Fragment
 class HomeFragment : Fragment() {
-    lateinit var homeText: TextView
+    lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        homeText = view.findViewById(R.id.home_text)
         Log.e("Home Tag", "onViewCreated: Finished Home Screen ")
-
+        // Islami ->
     }
 }

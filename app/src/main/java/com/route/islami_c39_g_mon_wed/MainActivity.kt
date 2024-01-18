@@ -5,27 +5,28 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.route.islami_c39_g_mon_wed.databinding.ActivityMainBinding
 import com.route.islami_c39_g_mon_wed.fragments.HomeFragment
 import com.route.islami_c39_g_mon_wed.fragments.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
-    lateinit var homeTabTextView: TextView
-    lateinit var profileTabTextView: TextView
+    private lateinit var binding: ActivityMainBinding  // null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        // Data Binding
+        setContentView(binding.root)
         // Fragments <->  Facebook or whatsapp
         //                              Chats - Status - Calls
-        homeTabTextView = findViewById(R.id.home_tab)
-        profileTabTextView = findViewById(R.id.profile_tab)
-
-        homeTabTextView.setOnClickListener {
+        pushFragment(HomeFragment())
+        Log.e("TAG", "onCreate: ")
+        // view Pager ->
+        binding.homeTab.setOnClickListener {
             // Show or hide or replace fragment you need to supportFragmentManager
             pushFragment(HomeFragment())
-
-
+            // Todo App -> Room Data Base ->  Sqlite -> Entity ->
         }
-        profileTabTextView.setOnClickListener {
+        binding.profileTab.setOnClickListener {
             pushFragment(ProfileFragment())
         }
     }
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         Log.e("TAG", "pushFragment: ")
         Log.e("TAG2", "pushFragment:2 ")
         // Pull Request
-
+        // View Binding
+        // XML Layout File -> Generated Java or Kotlin Class
     }
 }

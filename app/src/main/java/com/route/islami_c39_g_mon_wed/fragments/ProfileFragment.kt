@@ -8,28 +8,29 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.route.islami_c39_g_mon_wed.R
+import com.route.islami_c39_g_mon_wed.databinding.FragmentProfileBinding
 import com.route.islami_c39_g_mon_wed.temp.SettingsAdapter
 import com.route.islami_c39_g_mon_wed.temp.SettingsItem
 import kotlin.random.Random
 
 class ProfileFragment : Fragment() {
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var binding: FragmentProfileBinding
     private lateinit var adapter: SettingsAdapter
     private lateinit var settingsList: MutableList<SettingsItem>
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+    ): View {
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView = view.findViewById(R.id.settings_recycler_view)
         createSettingsList()
         adapter = SettingsAdapter(settingsList)
-        recyclerView.adapter = adapter
+        binding.settingsRecyclerView.adapter = adapter
         Log.e("Profile Tag", "onViewCreated: Finished Profile Screen ")
     }
 
