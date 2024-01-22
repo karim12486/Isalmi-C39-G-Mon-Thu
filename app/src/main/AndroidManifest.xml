@@ -13,6 +13,12 @@
         android:theme="@style/Theme.IslamiC39GMonWed"
         tools:targetApi="31">
         <activity
+            android:name=".islamiApp.HadethDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".islamiApp.SuraDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".islamiApp.HomeActivity"
             android:exported="false" />
         <activity
