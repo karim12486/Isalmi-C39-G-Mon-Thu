@@ -22,6 +22,27 @@ class TasbeehFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val tasabeeh= arrayOf("سبحان الله", "الحمد لله", "الله أكبر")
+        var counter = 0
+        var tasbeehCounter = 0
+        binding.tasbehButton.text = tasabeeh[tasbeehCounter]
+        binding.tasbehButton.setOnClickListener {
+            if (counter < 33){
+                counter++
+                binding.noTasbeh.text = "$counter"
+                binding.bodySebha.rotation = binding.bodySebha.rotation + (360/32).toFloat()
+            }else{
+                counter = 0
+                binding.noTasbeh.text = "$counter"
+                binding.bodySebha.rotation = 0F
+                if (tasbeehCounter < 2){
+                    binding.tasbehButton.text = tasabeeh[++tasbeehCounter]
+                }
+                else{
+                    tasbeehCounter = 0
+                    binding.tasbehButton.text = tasabeeh[tasbeehCounter]
+                }
+            }
+        }
     }
 }
