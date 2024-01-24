@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:background="@drawable/islami_bg">
+
+    <ImageView
+        android:id="@+id/head_sebha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/head_of_seb7a"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <ImageView
+        android:id="@+id/body_sebha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/body_of_seb7a"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/head_sebha"
+        app:layout_constraintWidth_percent="0.55"
+
+        />
+
+    <TextView
+        android:id="@+id/subTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="عدد التسبيحات"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@id/body_sebha"
+        app:layout_constraintStart_toStartOf="@id/body_sebha"
+        app:layout_constraintTop_toBottomOf="@id/body_sebha" />
+
+    <TextView
+        android:id="@+id/no_tasbeh"
+        android:layout_width="69dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/goldVariant2"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@id/subTitle"
+        app:layout_constraintStart_toStartOf="@id/subTitle"
+        app:layout_constraintTop_toBottomOf="@id/subTitle" />
+
+    <Button
+        android:id="@+id/tasbeh_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/gold"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@id/no_tasbeh"
+        app:layout_constraintStart_toStartOf="@id/no_tasbeh"
+        app:layout_constraintTop_toBottomOf="@id/no_tasbeh"
+        tools:text="سبحان اللّه" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
